@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Voter History </h1>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+
+            {% if not classes %}
+                <h1>You have not Voted in the SA 2022 National E-vote.</h1>
+            {% else %}
+                <h1>You Have voted in the SA 2022 National E-vote</h1>
+
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Party ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Ranking</th>
+                        <th scope="col">Location</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <!-- Construct the rest of courses here -->
+                    {% for class in classes %}
+                    <tr>
+                        <td scope='row'>{{ class.r2["courseID"] }}</td>
+                        <td>{{ class.r2["title"] }}</td>
+                        <td>{{ class.r2["description"] }}</td>
+                        <td>{{ class.r2["credits"] }}</td>
+                        <td>{{ class.r2["term"] }}</td>                        
+                    </tr>
+                    {% endfor %}
+                    
+                    </tbody>
+                </table>
+                {% endif %}
+        </div>
+    </div>
+{% endblock %}

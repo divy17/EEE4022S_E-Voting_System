@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Welcome to South African 2022 E-Voting.</h1>
+
+            {% if session['username'] %}
+                <h3>Let's get started.</h3>
+            {% else %}
+                <p>Already registered? <a href="{{url_for('login') }}">Login</a></p>
+            {% endif %}
+
+            <div style="text-align:left;">
+                <h2>How To Vote?</h2> 
+                
+                <p>First Register, Login Then proceed to the Vote tab, all voter must be a SA citizen and be 18 years or older. Voters can only vote once, the history tab can be used to confirm that you have voted, Thank you for your partcipation </p>
+
+                <p> 7.1. The IEC shall take all reasonable steps to protect the personal information of Users and for the purpose of this clause, “personal information” shall be defined as detailed in the Promotion of Access to Information Act 2 of 2000 (PAIA).
+
+                    7.2. IEC may electronically collect, store and use the following personal information of Users:
+                    7.2.1. name and surname;
+                    7.2.2. contact numbers;
+                    7.2.3. non-personal browsing habits and click patterns;
+                    7.2.4. e-mail address;
+                    7.2.5. IP address;
+                    7.2.6. User selected password.
+                    
+                    7.3. The IEC’s collects, stores and uses the abovementioned information for the following purposes:
+                    7.3.1. Communicate requested information to the User.
+                    7.3.2. Provide the User with access to restricted pages on this website.
+                    7.3.3. To compile non-personal statistical information about browsing habits, click-patterns and access to the IEC’s website
+                    
+                    7.4. Information detailed above is collected either electronically by using cookies or is provided voluntarily by the User. Users may determine cookie use independently through their browser settings
+                    
+                    7.5. The IEC may collect, maintain, save, compile, share, disclose and sell any information collected from users, subject to the following provisions:
+                    7.5.1. IEC shall not disclose personal information from Users unless the User consents thereto.
+                    7.5.2. IEC shall disclose information without the User’s consent only through due legal process.
+                    7.5.3. IEC may compile, use and share any information that does not relate to any specific individual.
+                    
+                    7.6. IEC owns and retains all rights to non-personal statistical information collected and compiled by IEC </p> 
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
